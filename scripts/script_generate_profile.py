@@ -1,3 +1,7 @@
+import os
+import sys 
+
+
 def set_var_profile(name, value, prefix, suffix='\n'):
     """
     """
@@ -42,7 +46,7 @@ def extract_filename(fullpath_filename):
     return os.path.splitext(os.path.basename(fullpath_filename))[0]
 
 
-def generate_profiles_from_sndfiles(list_sndfileq):
+def generate_profiles_from_sndfiles(list_sndfiles):
     """
     """
     return [
@@ -53,3 +57,15 @@ def generate_profiles_from_sndfiles(list_sndfileq):
         )
         for indice_profile, snd_filename in enumerate(list_sndfiles)
     ]
+
+
+if __name__ == '__main__':
+    snd_filenames = sys.argv[1:]
+    list_snd_filenames = filter(
+        lambda s: len(s),
+        " ".join(snd_filenames).split("##")
+        )
+    # print "\n".join(list_snd_filenames)
+    #print " ".join(snd_filenames).split("##")
+    #print
+    print "\n".join(generate_profiles_from_sndfiles(list_snd_filenames))
