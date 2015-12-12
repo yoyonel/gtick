@@ -22,3 +22,8 @@ stamp-h1
 tags
 ylwrap
 *~
+
+Makefile.am.user
+compile
+configure.log 
+test-driver 
