@@ -125,5 +125,8 @@ int set_accents(metro_t* metro,
 const char* get_accents(metro_t* metro,
                         int n _U_, char** option_name _U_);
 
+const char* get_sample(metro_t* metro,
+                              int n _U_, char** option_name _U_);
+int set_sample(metro_t* metro,
+                      const char* option_name _U_, const char* sample_name);
 #endif /* METRO_H */
-

@@ -488,7 +488,7 @@ static void delete_sample(metro_t* metro) {
  *
  * returns 0 on success, -1 otherwise
  */
-static int set_sample(metro_t* metro,
+int set_sample(metro_t* metro,
                       const char* option_name _U_, const char* sample_name)
 {
   if (metro->options->sample_name)
@@ -512,7 +512,7 @@ static int set_sample(metro_t* metro,
 /*
  * option system callback for spotting the sample
  */
-static const char* get_sample(metro_t* metro,
+const char* get_sample(metro_t* metro,
                               int n _U_, char** option_name _U_)
 {
   return metro->options->sample_name;
@@ -1864,7 +1864,7 @@ metro_t* metro_new(void) {
 		  (option_set_t) set_show_accenttable,
 		  (option_get_n_t) option_return_one,
 		  (option_get_t) get_show_accenttable,
-		  (void*) metro);
+          (void*) metro);
   option_register(&metro->options->option_list,
                   "Accents",
 		  (option_new_t) new_accents,
